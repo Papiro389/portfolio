@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <script>
+    // Obtener el modal
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+  
+    // Imagen dentro del modal
+    const modalImg = document.createElement('img');
+    modalImg.classList.add('modal-content');
+    modal.appendChild(modalImg);
+  
+    // Botón de cerrar
+    const closeBtn = document.createElement('span');
+    closeBtn.classList.add('close');
+    closeBtn.innerHTML = '&times;';
+    modal.appendChild(closeBtn);
+  
+    // Añadir el modal al body
+    document.body.appendChild(modal);
+  
+    // Obtener todas las imágenes de la galería
+    const galleryImages = document.querySelectorAll('#gallery img');
+  
+    // Añadir evento de click a cada imagen
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+      });
+    });
+  
+    // Añadir evento de click al botón de cerrar
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  
+    // Cerrar el modal cuando se hace click fuera de la imagen
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.style.display = 'none';
+      }
+    });
+
+    function openLightbox(img) {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Close the lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeLightbox();
+            }
+        });
+
+        
+  </script>
+  
+    <nav>
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about_me.html">About Me</a></li>
+        </ul>
+        <ul>
+          <li><a href="../index.html">Papiroflexio - Portfolio</a></li>
+          <li class="hideOnMobile"><a href="../index.html">Home</a></li>
+          <li class="hideOnMobile"><a href="projects.html">Projects</a></li>
+          <li class="hideOnMobile"><a href="gallery.html">Gallery</a></li>
+          <li class="hideOnMobile"><a href="about_me.html">About Me</a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+        </ul>
+      </nav>
+
+      <script>
+        function showSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'none'
+        }
+      </script>
+<main id="gallery">
+<h1>web designs</h1>
+  <!-- Image gallery -->
+  <div class="gallery-container">
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/GM8t_QEaIAE_twF?format=jpg&name=large" alt="Image 1" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/GUhGWiva8AA2c7t?format=jpg&name=large" alt="Image 2" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/GK2G9hubcAADNGp?format=jpg&name=medium" alt="Image 3" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/GLnVoJJa0AAdFHO?format=jpg&name=medium" alt="Image 4" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/GMMJt7nbYAA-W-e?format=jpg&name=medium" alt="Image 5" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/GK1z621aAAAnHL5?format=jpg&name=medium" alt="Image 6" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/F7nu0oTbQAAesnK?format=jpg&name=medium" alt="Image 1" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="https://pbs.twimg.com/media/F1FuGRAaQAUznsv?format=jpg&name=medium" alt="Image 1" onclick="openLightbox(this)"></div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="Lightbox Image">
+</div>
+</main>
+</body>
+</html>

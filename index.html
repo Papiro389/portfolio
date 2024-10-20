@@ -1,0 +1,82 @@
+<!-- NOTA:
+ HAY UNOS PROBLEMAS EN EL CODIGO
+ 1: letras muy pequeñas en el nav
+ 2: como se veria el nav de color negro?
+ 3: menos redondeado al boton
+ 4: en las letras <li><a href="index.html">Papiroflexio - Portfolio</a></li> se le pondrá una imagen
+ 5:  -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta 
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul class="sidebar">
+      <li onclick=hideSidebar()><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pags/projects.html">Projects</a></li>
+      <li>
+        <a href="pags/gallery.html">Gallery</a>
+        <ul class="submenu">
+          <li><a href="pags/comic_page1.html">Illustration</a></li>
+          <li><a href="pags/comic_page2.html">web desing</a></li>
+          <li><a href="pags/comic_page3.html">3d work</a></li>
+          <li><a href="pags/comic_page3.html">comics</a></li>
+        </ul>
+      </li>
+      <li><a href="pags/about_me.html">About Me</a></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">Papiroflexio - Portfolio</a></li>
+      <li class="hideOnMobile"><a href="index.html">Home</a></li>
+      <li class="hideOnMobile"><a href="pags/projects.html">Projects</a></li>
+      <li>
+        <a href="pags/gallery.html">Gallery</a>
+        <ul class="submenu">
+          <li><a href="pags/gallery.html">Illustration</a></li>
+          <li><a href="pags/gallery/web_design.html">web desing</a></li>
+          <li><a href="pags/gallery/3dmodel.html">3d work</a></li>
+          <li><a href="pags/gallery/comics.html">comics</a></li>
+        </ul>
+      </li>
+      <li class="hideOnMobile"><a href="pags/about_me.html">About Me</a></li>
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+    </ul>
+  </nav>
+
+  <!-- script -->
+  <script>
+    function showSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+    }
+  </script>
+
+<!--main con id="index"-->
+<main id="main">
+  <div class="content-container">
+    <div class="text-content">
+      <h1>Papiroflexio</h1>
+      <h2>Front-end, App developer and a digital illustrator </h2>
+      <a href="https://papiroflexio.carrd.co/" target="_blank">
+        <button>Carrd.co</button>
+      </a>
+    </div>
+    <div class="image-content">
+      <img src="Cosmo1.png" alt="Cosmo with Tabby" width="100%">
+    </div>
+  </div>
+</main>
+</body>
+</html>

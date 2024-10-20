@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <ul class="sidebar">
+      <li onclick="hideSidebar()"><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about_me.html">About Me</a></li>
+    </ul>
+    <ul>
+      <li><a href="../index.html">Papiroflexio - Portfolio</a></li>
+      <li class="hideOnMobile"><a href="../index.html">Home</a></li>
+      <li class="hideOnMobile"><a href="projects.html">Projects</a></li>
+      <li class="hideOnMobile"><a href="gallery.html">Gallery</a></li>
+      <li class="hideOnMobile"><a href="about_me.html">About Me</a></li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+    </ul>
+  </nav>
+  <main id="projects">
+    <h1>Projects</h1>
+    <img src="https://pbs.twimg.com/media/GMMJt7nbYAA-W-e?format=jpg&name=medium" alt="Project 1">
+    <h2>Panadería Froggie</h2>
+    <p>App para una panadería Froggie dedicada a vender sus productos mediante el servicio de pick up</p>
+    <a href="https://github.com/Papiro389" target="_blank">
+      <button>Link: Expo.dev</button>
+    </a>
+    <img src="https://th.bing.com/th/id/OIP.BAuyyI6IkrJ1MW0qEKn6uQHaD4?rs=1&pid=ImgDetMain" alt="Project 2">
+    <h2>Bionic Reading</h2>
+    <p>Página web hecha en HTML para convertir un párrafo normal en un texto legible y fácil de leer, muy útil para personas con problemas de comprensión lectora o TDA.</p>
+    <a href="https://github.com/Papiro389" target="_blank">
+      <button>Link: Github</button>
+    </a>    
+    <br>
+    <h2>Puedes encontrar más proyectos con su información en mi GitHub</h2>
+    <a href="https://github.com/Papiro389" target="_blank">
+      <button>Github</button>
+    </a>
+    </main>
+  <script>
+    function showSidebar(){
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.style.display = 'flex';
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
